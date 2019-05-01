@@ -27,7 +27,7 @@
                             themes: 'modern', 
                             height: 200, 
                             forced_root_block : "" ,
-                            toolbar: 'bold italic | alignleft alignright alignjustify | bullist numlist outdent indent ',
+                            toolbar: 'bold italic | alignleft alignright | bullist numlist outdent indent ',
                             menubar: false,
                             });                        
                       //forced_root_block : "" removes forced p elements

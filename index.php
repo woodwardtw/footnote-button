@@ -14,17 +14,6 @@ Text Domain: my-toolset
 */
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
-
-// add_action('wp_enqueue_scripts', 'prefix_load_scripts');
-
-// function previx_load_scripts() {                           
-//     $deps = array('jquery');
-//     $version= '1.0'; 
-//     $in_footer = true;    
-//     wp_enqueue_script('fnbutton-main-js', plugin_dir_url( __FILE__) . 'js/fnbutton-main.js', $deps, $version, $in_footer); 
-//     wp_enqueue_style( 'fnbutton-main-css', plugin_dir_url( __FILE__) . 'css/fnbutton-main.css');
-// }
-
 function load_custom_wp_admin_style() {
         wp_register_style( 'fnbutton_wp_admin_css', plugin_dir_url( __FILE__) . 'css/fnbutton-main.css', false, '1.0.0' );
         wp_enqueue_style( 'fnbutton_wp_admin_css' );
