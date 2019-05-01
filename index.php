@@ -25,6 +25,12 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 //     wp_enqueue_style( 'fnbutton-main-css', plugin_dir_url( __FILE__) . 'css/fnbutton-main.css');
 // }
 
+function load_custom_wp_admin_style() {
+        wp_register_style( 'fnbutton_wp_admin_css', plugin_dir_url( __FILE__) . 'css/fnbutton-main.css', false, '1.0.0' );
+        wp_enqueue_style( 'fnbutton_wp_admin_css' );
+}
+add_action( 'admin_enqueue_scripts', 'load_custom_wp_admin_style' );
+
 // hooks your functions into the correct filters
 function fnbutton_add_mce_button() {
             // check user permissions
