@@ -58,3 +58,4 @@ function fnbutton_add_tinymce_plugin( $plugin_array ) {
           $plugin_array['fnbutton_mce_button'] = plugin_dir_url( __FILE__)  .'/js/fnbutton-main.js';
           return $plugin_array;
 }
+

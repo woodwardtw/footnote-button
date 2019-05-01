@@ -1,36 +1,38 @@
 (function() {
        tinymce.PluginManager.add('fnbutton_mce_button', function( editor, url ) {
            editor.addButton('fnbutton_mce_button', {
-                       text: '👣',
-                       icon: false,
+                       text: '👣',//button text 
+                       icon: false,//no icon currently
                        onclick: function() {
-                         // change the shortcode as per your requirement
                          editor.windowManager.open({
-                            title: 'Add Footnote',
-                            width: 400,
-                            height: 200,
+                            title: 'Add Footnote',//header for modal
+                            id: 'footnote-maker',
+                            width: 550,
+                            height: 220,
                             body: [{
                               type: 'textbox',
                               name: 'footnote',
-                              label: '',
+                              label: '',//label seemed unnecessary
                               multiline : true,
                               minHeight: 150,
                             }],
                             onsubmit: function( e ) {
-                              editor.insertContent( '[efn_note]' +  e.data.footnote + '[/efn_note]' );
-                            }
-                          });
+                              let foot = '[efn_note]' + tinyMCE.activeEditor.getContent() + '[/efn_note]';
+                              console.log(tinyMCE.activeEditor.getContent());
+                              editor.insertContent( foot );//set shortcodes with 
+                            }                           
+                          });    
+                          tinymce.init({ 
+                            selector: '#footnote-maker-body textarea', 
+                            themes: 'modern', 
+                            height: 200, 
+                            forced_root_block : "" ,
+                            toolbar: 'bold italic | alignleft alignright alignjustify | bullist numlist outdent indent ',
+                            menubar: false,
+                            });                        
+                      //forced_root_block : "" removes forced p elements
                       }
              });
        });
 })();
 
-//          {type: 'textbox', label: 'textbox', value: 'Fit will take all the space available.'},
-// {
-//                 type: 'textbox',
-//                 multiline: true,
-//                 name: 'content',
-//                 label: 'Content',
-//                 minWidth: 350,
-//                 minHeight: 150
-//                 },
