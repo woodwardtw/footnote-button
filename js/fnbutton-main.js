@@ -24,8 +24,9 @@
                           });    
                           tinymce.init({ 
                             selector: '#footnote-maker-body textarea', 
-                            themes: 'modern', 
-                            height: 200, 
+                            themes: 'modern',
+                            width: 548, 
+                            height: 172, 
                             forced_root_block : "" ,
                             toolbar: 'bold italic | alignleft alignright | bullist numlist outdent indent ',
                             menubar: false,
