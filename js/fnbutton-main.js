@@ -28,7 +28,8 @@
                             width: 548, 
                             height: 172, 
                             forced_root_block : "" ,
-                            toolbar: 'bold italic | alignleft alignright | bullist numlist outdent indent ',
+                            plugins: 'link',
+                            toolbar: 'bold italic | alignleft alignright | bullist numlist | link ',
                             menubar: false,
                             });                        
                       //forced_root_block : "" removes forced p elements
